@@ -18,5 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('folders')->group(function () {
     Route::get('/', [FolderController::class, 'index']);
     Route::post('/', [FolderController::class, 'store']);
+    Route::put('update/{id}', [FolderController::class, 'update']);
+    Route::delete('delete/{id}', [FolderController::class, 'delete']);
     Route::get('/{id}/child', [FolderController::class, 'get_child_document']);
 });
